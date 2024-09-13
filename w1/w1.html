@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My playlist</title>
+    <style>
+        h1 {
+            color:white;
+            font-family: Georgia, serif;
+            text-align: left;
+        }
+        body {
+            background-color:black;
+            opacity:0.9;
+            padding-top: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-family: Georgia, serif;
+        }
+        form {
+            color:white;
+            background-color: d;
+            position: relative;
+            bottom: 30px;
+        }
+        img {
+            position:relative;
+            bottom: 62px;
+            left: 125px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My <br>Playlist </h1>
+    <img src="icon.png" style: width="40";>
+    <form>
+        <fieldset>
+        <legend>Add Music</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="artist">Artist:</label>
+        <input type="text" id="artist" name="name" required><br><br>
+        <label for="ac">Album Cover:</label><br><br>
+        <input type="file" id="ac" name="ac" required><br><br><br>
+        <button class="button">Add to Playlist</button>
+        </fieldset>
+    </form>
+
+</body>
+</html>
