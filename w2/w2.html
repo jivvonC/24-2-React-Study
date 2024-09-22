@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My playlist</title>
+    <style>
+        h1 {
+            color:white;
+            font-family: Georgia, serif;
+            text-align: left;
+        }
+        h2 {
+            color:white;
+            font-family: Georgia, serif;
+            text-align: left;
+        }
+        body {
+            background-color:black;
+            opacity:0.9;
+            padding-top: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-family: Georgia, serif;
+            color:white
+        }
+        form {
+            color:white;
+            background-color: d;
+            position: relative;
+            bottom: 30px;
+        }
+        img {
+            position:relative;
+            bottom: 62px;
+            left: 125px;
+        }
+        p {
+            color:white;
+            border-style: groove;
+            border-color: white;
+            border-width: 1px;
+            padding: 5px;
+        }
+        #item{
+            color:white;
+            border-style: solid;
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>My <br>Playlist </h1>
+    <img src="icon.png" style: width="40";>
+    <form id="music">
+        <fieldset>
+        <legend>Add Music</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" autocomplete="off" required>
+        <br><br>
+        <label for="artist">Artist:</label>
+        <input type="text" id="artist" name="artist" autocomplete="off" required>
+        <br><br>
+        <label for="genre">Genre </label>
+        <select id="genre" name="genre" required>
+            <option name="genre" value="pop">Pop</option>
+            <option name="genre" value="jazz">Jazz</option>
+            <option name="genre" value="rock">Rock</option>
+            <option name="genre" value="classic">Classical</option>
+            <option name="genre" value="hiphop">Hip-hop</option>
+            <option name="genre" value="country">Country</option>
+        </select>
+        <br><br>
+        <label for="ac">Album Cover:</label><br><br>
+        <input type="file" id="ac" name="ac">
+        <br><br><br>
+        <button type="submit">Add to Playlist</button>
+        </fieldset>
+    </form>
+    <br><br>
+    <h2>Playlist</h2>
+    <script>
+        document.getElementById("music").onsubmit = function(event){
+            //파트1. 여기서 this는 'my_form'을 의미합니다.
+            var name = this.name.value
+            var artist = this.artist.value
+            var content = name + "-"+ artist
+            var genre = this.genre.value
+            //파트2. 새로운 <p> 태그를 하나 생성하여 body에 추가합니다.
+            var p = document.createElement('p')
+            p.textContent = content // 새로 만든 태그의 내용 지정하기
+            document.getElementsByTagName('body')[0].appendChild(p)
+            
+            if(genre=="classic"){
+                text="지루해요"
+            }
+            else{text="명곡이네요"}
+            
+            //파트3. input에 쓰여있던 모든 데이터를 없애줍니다(초기화).
+            this.name.value = ""
+            this.artist.value = ""
+            this.genre.value = ""
+            this.ac.value=""
+            //파트4. 제출 이벤트로 인한 새로고침 방지
+            event.preventDefault();
+            window.alert(text);
+            return false;
+        }
+    </script>
+</body>
+</html>
