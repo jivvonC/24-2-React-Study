@@ -63,8 +63,8 @@ function Home(){
             });
           }
           setPokemonData(allPokemonData); // 상태 업데이트
-          console.log('fetch끝')
-          localStorage.setItem('pokemonData', JSON.stringify(pokemonData));
+          // console.log('fetch끝')
+          // localStorage.setItem('pokemonData', JSON.stringify(pokemonData));
   
         } catch (err) {
           console.log(err);
@@ -88,8 +88,8 @@ function Home(){
     }, []);
     
     
-    //  let pokepoke = localStorage.getItem('pokemonData')
-    //  pokemonData= JSON.parse(pokepoke)
+     let pokepoke = localStorage.getItem('pokemonData')
+     pokemonData= JSON.parse(pokepoke)
 
     useEffect(()=>{
       if (localStorage.getItem('theme') == null){
