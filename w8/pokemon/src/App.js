@@ -88,8 +88,8 @@ function Home(){
     }, []);
     
     
-     let pokepoke = localStorage.getItem('pokemonData')
-     pokemonData= JSON.parse(pokepoke)
+    //  let pokepoke = localStorage.getItem('pokemonData')
+    //  pokemonData= JSON.parse(pokepoke)
 
     useEffect(()=>{
       if (localStorage.getItem('theme') == null){
